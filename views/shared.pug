@@ -1,0 +1,19 @@
+mixin releaseChart(canvasId, octaneLink, onLoadScript, releaseResult)
+    mixin releaseChartDiv
+        div(class="chart-title")
+            span Release Status
+            div(class="status-line")
+                a(href=octaneLink target='_blank' rel='noopener noreferrer' class='status-link')
+            div(class="chart-container" style="width:700px;height:200px;")
+                canvas(id=canvasId)
+                script.
+                    !{onLoadScript}
+    if releaseResult === 1
+        div(class="product-chart chart-good")
+            +releaseChartDiv
+    else if releaseResult === 0
+        div(class="product-chart chart-ok")
+            +releaseChartDiv
+    else
+        div(class="product-chart chart-bad")
+            +releaseChartDiv

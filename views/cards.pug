@@ -1,0 +1,34 @@
+mixin card(id, productName, releaseName, releaseDate, releaseResult, defectResult)
+    div(id=id, class="cell", onclick="selectProduct(this)")
+        div(class="cell-background")
+        div(class="cell-data")
+            div(class="card-title") #{productName}
+            div(class="label") Release:
+            div(class="data", title=releaseName) #{releaseName}
+            div(class="label") Date:
+            div(class="data") #{new Date(releaseDate).toLocaleDateString()}
+            div(class="label") Content:
+            if releaseResult === 1
+                div(class="color-tag color-tag--green")
+            else if releaseResult === 0
+                div(class="color-tag color-tag--yellow")
+            else if releaseResult === -1
+                div(class="color-tag color-tag--red")
+            else
+                div(class="color-tag color-tag--na")
+            div(class="label") Quality:
+            if defectResult === 1
+                div(class="color-tag color-tag--green")
+            else if defectResult === 0
+                div(class="color-tag color-tag--red")
+            else
+                div(class="color-tag color-tag--na")
+
++card('octane', 'Octane', octane.releaseMetadata.name, octane.releaseMetadata.end_date, octane.releaseResult, octane.defectResult)
++card('alm', 'ALM', alm.releaseMetadata.name, alm.releaseMetadata.end_date, alm.releaseResult, alm.defectResult)
++card('uftMobile', 'UFT Mobile', uftMobile.releaseMetadata.name, uftMobile.releaseMetadata.end_date, uftMobile.releaseResult, uftMobile.defectResult)
++card('lre', 'LoadRunner Enterprise', lre.releaseMetadata.name, lre.releaseMetadata.end_date, lre.releaseResult, lre.defectResult)
++card('lrp', 'LoadRunner Cloud', lrp.releaseMetadata.name, lrp.releaseMetadata.end_date, lrp.releaseResult, lrp.defectResult)
++card('lrc', 'TruClient', lrc.releaseMetadata.name, lrc.releaseMetadata.end_date, lrc.releaseResult, lrc.defectResult)
++card('srl', 'DevWeb Protocol', srl.releaseMetadata.name, srl.releaseMetadata.end_date, srl.releaseResult, srl.defectResult)
++card('lrproto', 'LoadRunner Protocols', lrproto.releaseMetadata.name, lrproto.releaseMetadata.end_date, lrproto.releaseResult, lrproto.defectResult)

@@ -1,0 +1,9 @@
+div(id="alm-section", class="product-section")
+    div(class="product-data")
+        div(class="product-name")
+            span ALM
+    div(class="product-charts")
+        +releaseChart('almReleaseChart',
+            'https://center.almoctane.com/ui/favorites/597006?&p=1001/26001',
+            'window.onload = almReleaseStatusChart(' + JSON.stringify(alm.releaseData) + ')',
+            alm.releaseResult)

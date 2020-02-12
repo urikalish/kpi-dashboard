@@ -1,0 +1,34 @@
+doctype html
+html
+    head
+        title Live Dashboard
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Play:400,700&display=swap")
+        link(rel="stylesheet", href="/stylesheets/normalized.css")
+        link(rel="stylesheet", href="/stylesheets/style.css")
+        script(src="/javascripts/charts/octane.js")
+        script(src="/javascripts/charts/alm.js")
+        script(src="/javascripts/charts/uft_mobile.js")
+        script(src="/javascripts/charts/lr.js")
+        script(src="/javascripts/main.js")
+        script(src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js")
+    body
+        div(class="background")
+            video(autoplay, muted, loop, id="background-video", class="background-vid")
+                source(type="video/mp4", src="/media/background.mp4")
+            div(class="background-filter-header")
+            div(class="background-filter-main")
+        header
+            div(class="title") KPI Dashboard
+        main
+            div(id="cards-container", class="cards-container")
+                include cards
+            div(id="charts-container", class="charts-container hidden")
+                include shared
+                include octane
+                include uft-mobile
+                include alm
+                include lr
+                include exit-button

@@ -1,0 +1,49 @@
+div(id="lre-section", class="product-section")
+    div(class="product-data")
+        div(class="product-name")
+            span LoadRunner Enterprise
+    div(class="product-charts")
+        +releaseChart('lreReleaseChart',
+            'https://almoctane-ams.saas.microfocus.com/ui/favorites/145005?p=196009/3001',
+            'window.onload = lreReleaseStatusChart(' + JSON.stringify(lre.releaseData) + ')',
+            lre.releaseResult)
+
+div(id="lrp-section", class="product-section")
+    div(class="product-data")
+        div(class="product-name")
+            span LoadRunner Cloud
+    div(class="product-charts")
+        +releaseChart('lrpReleaseChart',
+            'https://almoctane-ams.saas.microfocus.com/ui/favorites/112004?p=196009/2001',
+            'window.onload = lrpReleaseStatusChart(' + JSON.stringify(lrp.releaseData) + ')',
+            lrp.releaseResult)
+
+div(id="lrc-section", class="product-section")
+    div(class="product-data")
+        div(class="product-name")
+            span TruClient
+    div(class="product-charts")
+        +releaseChart('lrcReleaseChart',
+            'https://almoctane-ams.saas.microfocus.com/ui/favorites/183025?p=196009/4001',
+            'window.onload = lrcReleaseStatusChart(' + JSON.stringify(lrc.releaseData) + ')',
+            lrc.releaseResult)
+
+div(id="srl-section", class="product-section")
+    div(class="product-data")
+        div(class="product-name")
+            span DevWeb Protocol
+    div(class="product-charts")
+        +releaseChart('srlReleaseChart',
+            'https://almoctane-ams.saas.microfocus.com/ui/favorites/183025?p=196009/4001',
+            'window.onload = srlReleaseStatusChart(' + JSON.stringify(srl.releaseData) + ')',
+            srl.releaseResult)
+
+div(id="lrproto-section", class="product-section")
+    div(class="product-data")
+        div(class="product-name")
+            span LoadRunner Protocols
+    div(class="product-charts")
+        +releaseChart('lrProtoReleaseChart',
+            'https://almoctane-ams.saas.microfocus.com/ui/favorites/183025?p=196009/4001',
+            'window.onload = lrProtoReleaseStatusChart(' + JSON.stringify(lrproto.releaseData) + ')',
+            lrproto.releaseResult)

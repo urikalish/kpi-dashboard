@@ -1,0 +1,9 @@
+div(id="uftMobile-section", class="product-section")
+    div(class="product-data")
+        div(class="product-name")
+            span UFT Mobile
+    div(class="product-charts")
+        +releaseChart('uftMobileReleaseChart',
+            'https://internal.almoctane.com/ui/favorites/101004?p=45001/2001',
+            'window.onload = uftMobileReleaseStatusChart(' + JSON.stringify(uftMobile.releaseData) + ')',
+            uftMobile.releaseResult)
