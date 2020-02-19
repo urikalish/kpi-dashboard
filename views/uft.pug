@@ -1,0 +1,39 @@
+div(id="uftMobile-section", class="product-section")
+    div(class="product-data")
+        div(class="product-name")
+            span UFT Mobile
+    div(class="product-charts")
+        +releaseChart('uftMobileReleaseChart',
+            'https://internal.almoctane.com/ui/favorites/101004?p=45001/2001',
+            'window.onload = uftMobileReleaseStatusChart(' + JSON.stringify(uftMobile.releaseData) + ')',
+            uftMobile.releaseResult)
+
+div(id="uftOne-section", class="product-section")
+    div(class="product-data")
+        div(class="product-name")
+            span UFT One
+    div(class="product-charts")
+        +releaseChart('uftOneReleaseChart',
+            'https://internal.almoctane.com/ui/?p=45001/6001#/dashboard',
+            'window.onload = uftOneReleaseStatusChart(' + JSON.stringify(uftOne.releaseData) + ')',
+            uftOne.releaseResult)
+
+div(id="uftDeveloper-section", class="product-section")
+    div(class="product-data")
+        div(class="product-name")
+            span UFT Developer
+    div(class="product-charts")
+        +releaseChart('uftDeveloperReleaseChart',
+            'https://internal.almoctane.com/ui/?p=45001/5001#/dashboard',
+            'window.onload = uftDeveloperReleaseStatusChart(' + JSON.stringify(uftDeveloper.releaseData) + ')',
+            uftDeveloper.releaseResult)
+
+div(id="uftCodeless-section", class="product-section")
+    div(class="product-data")
+        div(class="product-name")
+            span Codeless (A.I.)
+    div(class="product-charts")
+        +releaseChart('uftCodelessReleaseChart',
+            'https://internal.almoctane.com/ui/?p=45001/5001#/dashboard',
+            'window.onload = uftCodelessReleaseStatusChart(' + JSON.stringify(uftCodeless.releaseData) + ')',
+            uftCodeless.releaseResult)

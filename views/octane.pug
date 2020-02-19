@@ -10,12 +10,12 @@ div(id="octane-section", class="product-section")
         mixin defectChartDiv
             div(class="chart-title")
                 span Defect Status
-                div(class="status-line")
-                    a(href='https://center.almoctane.com/ui/favorites/578006?p=1001/1002' target='_blank' rel='noopener noreferrer' class='status-link')
-                div(class="chart-container" style="width:700px;height:200px;")
-                    canvas(id="octaneDefectChart")
-                    script.
-                        window.onload = octaneDefectStatusChart(!{JSON.stringify(octane.defectData)})
+            div(class="status-line")
+                a(href='https://center.almoctane.com/ui/favorites/578006?p=1001/1002' target='_blank' rel='noopener noreferrer' class='status-link')
+            div(class="chart-container")
+                canvas(id="octaneDefectChart")
+                script.
+                    window.onload = octaneDefectStatusChart(!{JSON.stringify(octane.defectData)})
         if octane.defectResult === 1
             div(class="product-chart chart-good")
                 +defectChartDiv

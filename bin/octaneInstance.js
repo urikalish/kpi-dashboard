@@ -1,4 +1,5 @@
 const request = require('request-promise-native');
+const logger = require('./logger');
 //require('request-debug')(request);
 const TEN_MINUTES_MS = 10 * 60 * 1000;
 
@@ -17,7 +18,7 @@ function OctaneInstance(connectionData) {
 }
 
 OctaneInstance.prototype.getOctaneInstance = function () {
-    return new Promise(resolve => {
+    return new Promise((resolve, reject) => {
         if (new Date() - TEN_MINUTES_MS > this._lastAuthenticatedDate || !this._authenticated) {
             this._authenticated = false;
             return this.octane.post({
@@ -27,6 +28,10 @@ OctaneInstance.prototype.getOctaneInstance = function () {
                 this._authenticated = true;
                 this._lastAuthenticatedDate = new Date();
                 resolve(this.octane);
+            }).catch(reason => {
+                logger.warn('Unable to authenticate for octane '+ this._connectionData.baseUrl +': ' + reason)
+                this._authenticated = false;
+                reject(reason);
             });
         } else {
             resolve(this.octane);

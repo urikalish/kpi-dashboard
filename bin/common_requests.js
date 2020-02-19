@@ -13,6 +13,9 @@ function getFromOctane(octaneInstance, url, clientType) {
                     HPECLIENTTYPE: clientType
                 }
             })
+        }).catch(() => {
+            logger.warn('Unable to get Octane instance for ' + url);
+            throw new Error('No Octane instance');
         });
 }
 
@@ -47,6 +50,7 @@ function getLatestReleaseBurnUp(octaneInstance, releaseUrl) {
             return parsedData;
         }).catch(problem => {
             logger.error(problem);
+            throw new Error(problem);
         });
 }
 
