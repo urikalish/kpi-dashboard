@@ -69,8 +69,8 @@ function releaseStatusChart(releaseData, elementId) {
             labels: releaseData.labels,
             datasets: [{
                 label: 'Expected',
-                backgroundColor: '#999',
-                borderColor: '#999',
+                backgroundColor: '#fcdb1f',
+                borderColor: '#fcdb1f',
                 fill: false,
                 pointRadius: 0,
                 pointHoverRadius: 4,

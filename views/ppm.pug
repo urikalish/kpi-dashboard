@@ -1,0 +1,10 @@
+div(id="ppm-section", class="product-section")
+    div(class="product-data")
+        div(class="product-name") PPM
+        div(class="product-release-name") Release: #{ppm.releaseMetadata.name}
+        div(class="product-release-date") Date: #{ppm.releaseMetadata.end_date === 0 ? 'N/A' : new Date(ppm.releaseMetadata.end_date).toLocaleDateString()}
+    div(class="product-charts")
+        +releaseChart('ppmReleaseChart',
+            'https://internal.almoctane.com/ui/favorites/17001?p=79001/1003',
+            'window.onload = ppmReleaseStatusChart(' + JSON.stringify(ppm.releaseData) + ')',
+            ppm.releaseResult)

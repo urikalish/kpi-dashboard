@@ -5,6 +5,7 @@ let octaneDataCollector = require('../bin/octane_data_collector');
 let almDataCollector = require('../bin/alm_data_collector');
 let uftDataCollector = require('../bin/uft_data_collector');
 let lrDataCollector = require('../bin/lr_data_collector');
+let ppmDataCollector = require('../bin/ppm_data_collector');
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
@@ -19,7 +20,8 @@ router.get('/', function (req, res, next) {
         lrDataCollector.getLRData('LRP').catch(error => errorHandler(error)),
         lrDataCollector.getLRData('LRC').catch(error => errorHandler(error)),
         lrDataCollector.getLRData('SRL').catch(error => errorHandler(error)),
-        lrDataCollector.getLRData('LRPROTO').catch(error => errorHandler(error))
+        lrDataCollector.getLRData('LRPROTO').catch(error => errorHandler(error)),
+        ppmDataCollector.getPPMData().catch(error => errorHandler(error)),
     ]).then(results => {
         res.render('index', {
             octane: results[0],
@@ -32,7 +34,8 @@ router.get('/', function (req, res, next) {
             lrp: results[7],
             lrc: results[8],
             srl: results[9],
-            lrproto: results[10]
+            lrproto: results[10],
+            ppm: results[11]
         });
     }).catch(problem => {
         next(problem);

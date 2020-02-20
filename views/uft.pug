@@ -1,7 +1,8 @@
 div(id="uftMobile-section", class="product-section")
     div(class="product-data")
-        div(class="product-name")
-            span UFT Mobile
+        div(class="product-name") UFT Mobile
+        div(class="product-release-name") Release: #{uftMobile.releaseMetadata.name}
+        div(class="product-release-date") Date: #{uftMobile.releaseMetadata.end_date === 0 ? 'N/A' : new Date(uftMobile.releaseMetadata.end_date).toLocaleDateString()}
     div(class="product-charts")
         +releaseChart('uftMobileReleaseChart',
             'https://internal.almoctane.com/ui/favorites/101004?p=45001/2001',
@@ -10,8 +11,9 @@ div(id="uftMobile-section", class="product-section")
 
 div(id="uftOne-section", class="product-section")
     div(class="product-data")
-        div(class="product-name")
-            span UFT One
+        div(class="product-name") UFT One
+        div(class="product-release-name") Release: #{uftOne.releaseMetadata.name}
+        div(class="product-release-date") Date: #{uftOne.releaseMetadata.end_date === 0 ? 'N/A' : new Date(uftOne.releaseMetadata.end_date).toLocaleDateString()}
     div(class="product-charts")
         +releaseChart('uftOneReleaseChart',
             'https://internal.almoctane.com/ui/?p=45001/6001#/dashboard',
@@ -20,8 +22,9 @@ div(id="uftOne-section", class="product-section")
 
 div(id="uftDeveloper-section", class="product-section")
     div(class="product-data")
-        div(class="product-name")
-            span UFT Developer
+        div(class="product-name") UFT Developer
+        div(class="product-release-name") Release: #{uftDeveloper.releaseMetadata.name}
+        div(class="product-release-date") Date: #{uftDeveloper.releaseMetadata.end_date === 0 ? 'N/A' : new Date(uftDeveloper.releaseMetadata.end_date).toLocaleDateString()}
     div(class="product-charts")
         +releaseChart('uftDeveloperReleaseChart',
             'https://internal.almoctane.com/ui/?p=45001/5001#/dashboard',
@@ -30,8 +33,9 @@ div(id="uftDeveloper-section", class="product-section")
 
 div(id="uftCodeless-section", class="product-section")
     div(class="product-data")
-        div(class="product-name")
-            span Codeless (A.I.)
+        div(class="product-name") Codeless (A.I.)
+        div(class="product-release-name") Release: #{uftCodeless.releaseMetadata.name}
+        div(class="product-release-date") Date: #{uftCodeless.releaseMetadata.end_date === 0 ? 'N/A' : new Date(uftCodeless.releaseMetadata.end_date).toLocaleDateString()}
     div(class="product-charts")
         +releaseChart('uftCodelessReleaseChart',
             'https://internal.almoctane.com/ui/?p=45001/5001#/dashboard',

@@ -1,7 +1,8 @@
 div(id="alm-section", class="product-section")
     div(class="product-data")
-        div(class="product-name")
-            span ALM
+        div(class="product-name") ALM
+        div(class="product-release-name") Release: #{alm.releaseMetadata.name}
+        div(class="product-release-date") Date: #{alm.releaseMetadata.end_date === 0 ? 'N/A' : new Date(alm.releaseMetadata.end_date).toLocaleDateString()}
     div(class="product-charts")
         +releaseChart('almReleaseChart',
             'https://center.almoctane.com/ui/favorites/597006?&p=1001/26001',

@@ -1,7 +1,8 @@
 div(id="lre-section", class="product-section")
     div(class="product-data")
-        div(class="product-name")
-            span LoadRunner Enterprise
+        div(class="product-name") LoadRunner Enterprise
+        div(class="product-release-name") Release: #{lre.releaseMetadata.name}
+        div(class="product-release-date") Date: #{lre.releaseMetadata.end_date === 0 ? 'N/A' : new Date(lre.releaseMetadata.end_date).toLocaleDateString()}
     div(class="product-charts")
         +releaseChart('lreReleaseChart',
             'https://almoctane-ams.saas.microfocus.com/ui/favorites/145005?p=196009/3001',
@@ -10,8 +11,9 @@ div(id="lre-section", class="product-section")
 
 div(id="lrp-section", class="product-section")
     div(class="product-data")
-        div(class="product-name")
-            span LoadRunner Cloud
+        div(class="product-name") LoadRunner Cloud
+        div(class="product-release-name") Release: #{lrp.releaseMetadata.name}
+        div(class="product-release-date") Date: #{lrp.releaseMetadata.end_date === 0 ? 'N/A' : new Date(lrp.releaseMetadata.end_date).toLocaleDateString()}
     div(class="product-charts")
         +releaseChart('lrpReleaseChart',
             'https://almoctane-ams.saas.microfocus.com/ui/favorites/112004?p=196009/2001',
@@ -20,8 +22,9 @@ div(id="lrp-section", class="product-section")
 
 div(id="lrc-section", class="product-section")
     div(class="product-data")
-        div(class="product-name")
-            span TruClient
+        div(class="product-name") TruClient
+        div(class="product-release-name") Release: #{lrc.releaseMetadata.name}
+        div(class="product-release-date") Date: #{lrc.releaseMetadata.end_date === 0 ? 'N/A' : new Date(lrc.releaseMetadata.end_date).toLocaleDateString()}
     div(class="product-charts")
         +releaseChart('lrcReleaseChart',
             'https://almoctane-ams.saas.microfocus.com/ui/favorites/183025?p=196009/4001',
@@ -30,8 +33,9 @@ div(id="lrc-section", class="product-section")
 
 div(id="srl-section", class="product-section")
     div(class="product-data")
-        div(class="product-name")
-            span DevWeb Protocol
+        div(class="product-name") DevWeb Protocol
+        div(class="product-release-name") Release: #{srl.releaseMetadata.name}
+        div(class="product-release-date") Date: #{srl.releaseMetadata.end_date === 0 ? 'N/A' : new Date(srl.releaseMetadata.end_date).toLocaleDateString()}
     div(class="product-charts")
         +releaseChart('srlReleaseChart',
             'https://almoctane-ams.saas.microfocus.com/ui/favorites/183025?p=196009/4001',
@@ -40,8 +44,9 @@ div(id="srl-section", class="product-section")
 
 div(id="lrproto-section", class="product-section")
     div(class="product-data")
-        div(class="product-name")
-            span LoadRunner Protocols
+        div(class="product-name") LoadRunner Protocols
+        div(class="product-release-name") Release: #{lrproto.releaseMetadata.name}
+        div(class="product-release-date") Date: #{lrproto.releaseMetadata.end_date === 0 ? 'N/A' : new Date(lrproto.releaseMetadata.end_date).toLocaleDateString()}
     div(class="product-charts")
         +releaseChart('lrProtoReleaseChart',
             'https://almoctane-ams.saas.microfocus.com/ui/favorites/183025?p=196009/4001',

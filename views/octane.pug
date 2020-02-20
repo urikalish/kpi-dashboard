@@ -1,17 +1,18 @@
 div(id="octane-section", class="product-section")
     div(class="product-data")
-        div(class="product-name")
-            span Octane
+        div(class="product-name") Octane
+        div(class="product-release-name") Release: #{octane.releaseMetadata.name}
+        div(class="product-release-date") Date: #{octane.releaseMetadata.end_date === 0 ? 'N/A' : new Date(octane.releaseMetadata.end_date).toLocaleDateString()}
     div(class="product-charts")
         +releaseChart('octaneReleaseChart',
-            'https://center.almoctane.com/ui/favorites/578006?p=1001/1002',
+            'https://center.almoctane.com/ui/favorites/606003?p=1001/1002',
             'window.onload = octaneReleaseStatusChart('+JSON.stringify(octane.releaseData)+')',
             octane.releaseResult)
         mixin defectChartDiv
             div(class="chart-title")
                 span Defect Status
             div(class="status-line")
-                a(href='https://center.almoctane.com/ui/favorites/578006?p=1001/1002' target='_blank' rel='noopener noreferrer' class='status-link')
+                a(href='https://center.almoctane.com/ui/favorites/606003?p=1001/1002' target='_blank' rel='noopener noreferrer' class='status-link')
             div(class="chart-container")
                 canvas(id="octaneDefectChart")
                 script.

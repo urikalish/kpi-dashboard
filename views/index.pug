@@ -1,10 +1,11 @@
 doctype html
 html
     head
-        title Live Dashboard
+        title ADM Ocean
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        meta(name="description" content="source code at https://github.houston.softwaregrp.net/spencer-bruce/kpi-dashboard")
         link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Play:400,700&display=swap")
         link(rel="stylesheet", href="/css/normalized.css")
         link(rel="stylesheet", href="/css/style.css")
@@ -12,6 +13,7 @@ html
         script(src="/js/charts/alm.js")
         script(src="/js/charts/uft.js")
         script(src="/js/charts/lr.js")
+        script(src="/js/charts/ppm.js")
         script(src="/js/main.js")
         script(src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.8.0/Chart.bundle.min.js")
     body
@@ -21,7 +23,7 @@ html
             div(class="background-filter-header")
             div(class="background-filter-main")
         header
-            div(class="header-title") The Aquarium
+            div(class="header-title") ADM Ocean
         main
             div(id="cards-container", class="cards-container")
                 include cards
@@ -32,4 +34,5 @@ html
                 include uft
                 include alm
                 include lr
+                include ppm
                 include exit-button
