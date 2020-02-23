@@ -8,12 +8,12 @@ mixin releaseChart(canvasId, octaneLink, onLoadScript, releaseResult)
             canvas(id=canvasId)
             script.
                 !{onLoadScript}
-    if releaseResult === 1
+    if releaseResult === 1 || releaseResult === 0
         div(class="product-chart chart-good")
             +releaseChartDiv
-    else if releaseResult === 0
-        div(class="product-chart chart-ok")
-            +releaseChartDiv
+    //-else if releaseResult === 0
+    //-    div(class="product-chart chart-ok")
+    //-        +releaseChartDiv
     else if releaseResult === -1
         div(class="product-chart chart-bad")
             +releaseChartDiv

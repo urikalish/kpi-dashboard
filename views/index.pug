@@ -5,7 +5,6 @@ html
         meta(charset="UTF-8")
         meta(name="viewport", content="width=device-width, initial-scale=1.0")
         meta(http-equiv="X-UA-Compatible", content="ie=edge")
-        meta(name="description" content="source code at https://github.houston.softwaregrp.net/spencer-bruce/kpi-dashboard")
         link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Play:400,700&display=swap")
         link(rel="stylesheet", href="/css/normalized.css")
         link(rel="stylesheet", href="/css/style.css")
@@ -23,12 +22,13 @@ html
             div(class="background-filter-header")
             div(class="background-filter-main")
         header
-            div(class="header-title") ADM Ocean
+            div(class="header-title") ADM OCEAN
         main
+            div(id="bubbles-container", class="bubbles-container")
+                include bubbles
             div(id="cards-container", class="cards-container")
                 include cards
             div(id="charts-container", class="charts-container hidden")
-                include bubbles
                 include shared
                 include octane
                 include uft
@@ -36,3 +36,5 @@ html
                 include lr
                 include ppm
                 include exit-button
+            div(id="links-container", class="links-container")
+                include links

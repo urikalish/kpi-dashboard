@@ -8,18 +8,18 @@ div(id="octane-section", class="product-section")
             'https://center.almoctane.com/ui/favorites/606003?p=1001/1002',
             'window.onload = octaneReleaseStatusChart('+JSON.stringify(octane.releaseData)+')',
             octane.releaseResult)
-        mixin defectChartDiv
-            div(class="chart-title")
-                span Defect Status
-            div(class="status-line")
-                a(href='https://center.almoctane.com/ui/favorites/606003?p=1001/1002' target='_blank' rel='noopener noreferrer' class='status-link')
-            div(class="chart-container")
-                canvas(id="octaneDefectChart")
-                script.
-                    window.onload = octaneDefectStatusChart(!{JSON.stringify(octane.defectData)})
-        if octane.defectResult === 1
-            div(class="product-chart chart-good")
-                +defectChartDiv
-        else if octane.defectResult === 0
-            div(class="product-chart chart-bad")
-                +defectChartDiv
+        //-mixin defectChartDiv
+        //-    div(class="chart-title")
+        //-        span Defect Status
+        //-    div(class="status-line")
+        //-        a(href='https://center.almoctane.com/ui/favorites/606003?p=1001/1002' target='_blank' rel='noopener noreferrer' class='status-link')
+        //-    div(class="chart-container")
+        //-        canvas(id="octaneDefectChart")
+        //-        script.
+        //-            window.onload = octaneDefectStatusChart(!{JSON.stringify(octane.defectData)})
+        //-if octane.defectResult === 1
+        //-    div(class="product-chart chart-good")
+        //-        +defectChartDiv
+        //-else if octane.defectResult === 0
+        //-    div(class="product-chart chart-bad")
+        //-        +defectChartDiv

@@ -13,10 +13,10 @@ mixin card(id, productFamily, productName, releaseName, releaseDate=0, releaseRe
                 div(class="card-data-container")
                     div(class="card-data", title=releaseName) #{releaseName}
                     div(class="card-data") #{releaseDate === 0 ? 'N/A' : new Date(releaseDate).toLocaleDateString()}
-                    if releaseResult === 1
+                    if releaseResult === 1 || releaseResult === 0
                         div(class="card-data color-tag color-tag--green")
-                    else if releaseResult === 0
-                        div(class="card-data color-tag color-tag--yellow")
+                    //-else if releaseResult === 0
+                    //-div(class="card-data color-tag color-tag--yellow")
                     else if releaseResult === -1
                         div(class="card-data color-tag color-tag--red")
                     else
@@ -37,9 +37,9 @@ mixin card(id, productFamily, productName, releaseName, releaseDate=0, releaseRe
 +card('alm', 'prod-family-lm', 'ALM', alm.releaseMetadata.name, alm.releaseMetadata.end_date, alm.releaseResult, alm.defectResult)
 +card('ppm', 'prod-family-lm', 'PPM', ppm.releaseMetadata.name, ppm.releaseMetadata.end_date, ppm.releaseResult, ppm.defectResult)
 +card('uftOne', 'prod-family-ft', 'UFT One', uftOne.releaseMetadata.name, uftOne.releaseMetadata.end_date, uftOne.releaseResult, uftOne.defectResult)
-+card('uftDeveloper', 'prod-family-ft', 'UFT Developer', uftDeveloper.releaseMetadata.name, uftDeveloper.releaseMetadata.end_date, uftDeveloper.releaseResult, uftDeveloper.defectResult)
-+card('uftCodeless', 'prod-family-ft', 'Codeless (A.I.)', uftCodeless.releaseMetadata.name, uftCodeless.releaseMetadata.end_date, uftCodeless.releaseResult, uftCodeless.defectResult)
 +card('uftMobile', 'prod-family-ft', 'UFT Mobile', uftMobile.releaseMetadata.name, uftMobile.releaseMetadata.end_date, uftMobile.releaseResult, uftMobile.defectResult)
++card('uftCodeless', 'prod-family-ft', 'Codeless (A.I.)', uftCodeless.releaseMetadata.name, uftCodeless.releaseMetadata.end_date, uftCodeless.releaseResult, uftCodeless.defectResult)
++card('uftDeveloper', 'prod-family-ft', 'UFT Developer', uftDeveloper.releaseMetadata.name, uftDeveloper.releaseMetadata.end_date, uftDeveloper.releaseResult, uftDeveloper.defectResult)
 +card('lre', 'prod-family-pe', 'LR Enterprise', lre.releaseMetadata.name, lre.releaseMetadata.end_date, lre.releaseResult, lre.defectResult)
 +card('lrp', 'prod-family-pe', 'LR Cloud', lrp.releaseMetadata.name, lrp.releaseMetadata.end_date, lrp.releaseResult, lrp.defectResult)
 +card('lrc', 'prod-family-pe', 'TruClient', lrc.releaseMetadata.name, lrc.releaseMetadata.end_date, lrc.releaseResult, lrc.defectResult)

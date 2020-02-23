@@ -84,26 +84,26 @@ function getSecurityDataChart(url) {
 
 module.exports.getOctaneData = function getOctaneData() {
     let returnObject = {
-        defectResult: null,
-        defectData: null,
+        //defectResult: null,
+        //defectData: null,
         releaseData: null,
         releaseResult: null,
         releaseMetadata: {name: 'N/A', end_date: 0},
         securityData: -2
     };
     return Promise.all([
-        getFirstAndLastDefectStatus(),
-        commonRequests.getLatestReleaseBurnUp(octaneInstance, 'internal-api/shared_spaces/1001/workspaces/1002/trend?graph_extenders=burnUpExtender&entity-name=work_item&rangeOperator=releasePeriod&xAxisUnit=days&cumulative=true&timezone=UTC%252B02%253A00&yaxis=story_points&range=[current_release]&sets=%5B%7B%22query%22%3A%22(subtype%20IN%20%27story%27%2C%27defect%27%2C%27quality_story%27%3Bphase%3D%7Bid%20IN%20%27phase.defect.closed%27%2C%27n4e05glkovrvs1kz6l6ly9lq3%27%2C%27phase.defect.duplicate%27%2C%27phase.story.done%27%2C%2797z8n12ekrl2pbq05y093j5mr%27%2C%27phase.quality_story.done%27%7D%3B(release%3D%7B%5Bcurrent_release%5D%7D))%22%2C%22groupBy%22%3Afalse%2C%22key%22%3A%22done%22%7D%2C%7B%22query%22%3A%22(subtype%20IN%20%27story%27%2C%27defect%27%2C%27quality_story%27%3B(release%3D%7B%5Bcurrent_release%5D%7D))%22%2C%22groupBy%22%3Afalse%2C%22key%22%3A%22total%22%7D%5D&entity-subtypes=story%2Cdefect%2Cquality_story'),
+        //getFirstAndLastDefectStatus(),
+        commonRequests.getLatestReleaseBurnUp(octaneInstance, 'internal-api/shared_spaces/1001/workspaces/1002/trend?graph_extenders=burnUpExtender&entity-name=work_item&rangeOperator=releasePeriod&xAxisUnit=days&cumulative=true&timezone=UTC%252B02%253A00&yaxis=story_points&range=[current_release]&sets=%5B%7B%22query%22%3A%22((subtype%3D%27story%27)%3Bphase%3D%7Bid%20IN%20%27phase.defect.closed%27%2C%27n4e05glkovrvs1kz6l6ly9lq3%27%2C%27phase.defect.duplicate%27%2C%27phase.story.done%27%2C%2797z8n12ekrl2pbq05y093j5mr%27%2C%27phase.quality_story.done%27%7D%3B(release%3D%7B%5Bcurrent_release%5D%7D))%22%2C%22groupBy%22%3Afalse%2C%22key%22%3A%22done%22%7D%2C%7B%22query%22%3A%22((subtype%3D%27story%27)%3B(release%3D%7B%5Bcurrent_release%5D%7D))%22%2C%22groupBy%22%3Afalse%2C%22key%22%3A%22total%22%7D%5D&entity-subtypes=story'),
         getReleaseData(),
         getSecurityData()
     ]).then(octaneResults => {
-        let octaneReleaseResult = octaneResults[1];
-        returnObject.defectResult = getDefectResult(octaneResults[0]);
-        returnObject.defectData = octaneResults[0];
+        let octaneReleaseResult = octaneResults[0];
+        //returnObject.defectResult = getDefectResult(octaneResults[0]);
+        //returnObject.defectData = octaneResults[0];
         returnObject.releaseResult = commonRequests.getReleaseResult(octaneReleaseResult);
         returnObject.releaseData = octaneReleaseResult;
-        returnObject.releaseMetadata = octaneResults[2];
-        returnObject.securityData = octaneResults[3];
+        returnObject.releaseMetadata = octaneResults[1];
+        returnObject.securityData = octaneResults[2];
         return returnObject;
     }).catch(() => {
         return returnObject;
