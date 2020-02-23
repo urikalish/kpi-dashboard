@@ -19,11 +19,10 @@ html
         div(class="background")
             video(autoplay, muted, loop, id="background-video", class="background-vid")
                 source(type="video/mp4", src="/media/background.mp4")
-            div(class="background-filter-header")
             div(class="background-filter-main")
-        header
-            div(class="header-title") ADM OCEAN
         main
+            div(class="header-container")
+                include header
             div(id="bubbles-container", class="bubbles-container")
                 include bubbles
             div(id="cards-container", class="cards-container")
