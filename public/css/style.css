@@ -81,7 +81,7 @@ a {
   position: absolute;
   bottom: -100px;
   border-radius: 50%;
-  background-image: linear-gradient(#19d0f9, #012b35);
+  background-image: linear-gradient(#19d0f9, #036d85);
   opacity: 0.5;
   animation-timing-function: linear;
   animation-iteration-count: infinite;
